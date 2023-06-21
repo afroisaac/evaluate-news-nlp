@@ -13,11 +13,10 @@ function handleSubmit(event) {
 
     if(!Client.blankInputChecker(formText)) {
         Client.postHandler('http://localhost:8081/analyze', parameter)
-        .then(res => {
-            console.log(res);
+        .then(data => {
+            updateUI(data, formText,);
         });
     }
-   // console.log("::: Form Submitted :::")
 
 };
 
@@ -38,6 +37,33 @@ const postHandler = async(url = '', data = {}) => {
     } catch(error) {
         console.log(error);
     }
+};
+
+function interpretPolarity(scoreTag) {
+    let polarity;
+    switch(scoreTag){
+        case 'P+':
+        case 'P':
+            polarity = 'POSITIVE';
+            break;
+        case 'NEU':
+            polarity = 'NEUTRAL';
+            break;
+        case 'N':
+        case 'N+':
+            polarity = 'NEGATIVE';
+            break;
+        case 'NONE':
+            polarity = 'NO POLARITY';
+            break;
+        default:
+            polarity = 'N/A';
+    }
+    return polarity;
+};
+
+function updateUI() {
+
 }
 
-export { handleSubmit, postHandler }
+export { handleSubmit, postHandler, interpretPolarity, updateUI }

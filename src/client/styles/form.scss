@@ -13,14 +13,6 @@ form {
         border-radius: 4rem;
         font-size: 1.2rem;
 
-        &.invalid {
-            outline: 1px solid var(--error-color);
-        }
-
-        &.valid {
-            outline: 1px solid var(--success-color);
-        }
-
         &:focus {
             outline: 1px solid var(--neutral-black-color);
             background-color: var(--background-color);
@@ -37,10 +29,6 @@ form {
                 background-color: var(--accent-color);
             }
         }
-    }
-
-    input.invalid + .error-msg {
-        display: block;
     }
 
     .error-msg {
