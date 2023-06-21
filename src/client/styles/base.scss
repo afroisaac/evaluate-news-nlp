@@ -31,7 +31,7 @@ main {
         text-align: center;
         padding: 0 2rem 0 2rem;
 
-        h1 {
+        h2 {
             font-weight: 900;
             font-size: 3rem;
         }
@@ -40,7 +40,7 @@ main {
             line-height: 1.5rem;
         }
 
-        h1, p {
+        h2, p {
             span {
                 color: var(--primary-color);
             }
