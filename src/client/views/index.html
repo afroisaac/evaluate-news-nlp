@@ -12,7 +12,7 @@
                 <a href="/"><img class="logo" alt="Analyzer logo"></a>
             </div>
             <div class="menu-wrapper">
-                navigation
+             
             </div>
         </header>
 
@@ -20,9 +20,9 @@
             <section class="form-wrapper">
                 <h2>Welcome to <span>Analyzer</span></h2>
                 <p>Analyzer takes the url of any blog and evaluates it using the powerful <span>Meaning Cloud's sentiment analysis API</span>. It presents the outcome of its analysis below.</p>
-                <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="name" type="text" name="input"  onblur="onBlur()" placeholder="Name">
-                    <input type="submit" value="submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <input id="text-input" type="text" name="input" placeholder="Input text or url">
+                    <input type="submit" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             </section>
 

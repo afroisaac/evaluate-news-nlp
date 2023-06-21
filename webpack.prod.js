@@ -2,10 +2,19 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
+const CSSMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
     entry: './src/client/index.js',
+    output: {
+        libraryTarget: 'var',
+        library: 'Client'
+    },
     mode: 'production',
+    optimization: {
+        minimizer: [new TerserWebpackPlugin({}), new CSSMinimizerWebpackPlugin({})],
+    },
     module: {
         rules: [
             {

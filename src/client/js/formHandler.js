@@ -1,16 +1,43 @@
 function handleSubmit(event) {
-    event.preventDefault()
+    event.preventDefault();
 
     // check what text was put into the form field
-    let formText = document.getElementById('name').value
-    checkForName(formText)
+    let formText = document.getElementById('text-input').value;
+    formText = formText.trim();
 
-    console.log("::: Form Submitted :::")
-    fetch('http://localhost:8080/test')
-    .then(res => res.json())
-    .then(function(res) {
-        document.getElementById('results').innerHTML = res.message
-    })
+    let inputType = Client.urlChecker(formText) ? 'url' : 'txt';
+    let parameter = {
+        'text': formText,
+        'type': inputType
+    };
+
+    if(!Client.blankInputChecker(formText)) {
+        Client.postHandler('http://localhost:8081/analyze', parameter)
+        .then(res => {
+            console.log(res);
+        });
+    }
+   // console.log("::: Form Submitted :::")
+
+};
+
+
+const postHandler = async(url = '', data = {}) => {
+    const response = await fetch(url, {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+     });
+ 
+    try {
+        const result = await response.json();
+        return result; 
+    } catch(error) {
+        console.log(error);
+    }
 }
 
-export { handleSubmit }
+export { handleSubmit, postHandler }
