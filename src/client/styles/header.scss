@@ -2,4 +2,14 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 10px 40px;
+    border-bottom: 1px solid var(--grey-color);
+
+    .logo-wrapper {
+        a{
+            .logo{
+                width: 120px;
+                height: auto;
+            }
+        }
+    }
 }
