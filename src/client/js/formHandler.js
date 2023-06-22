@@ -17,6 +17,7 @@ function handleSubmit(event) {
         errorElem.style.display = 'none';
         Client.postHandler('http://localhost:8081/analyze', parameter)
         .then(data => {
+            console.log(data);
             Client.updateUI(data, formText, resultsElement);
         });
     } else {
