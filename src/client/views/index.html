@@ -12,7 +12,7 @@
                 <a href="/"><img class="logo" alt="Analyzer logo"></a>
             </div>
             <div class="menu-wrapper">
-             
+
             </div>
         </header>
 
@@ -22,7 +22,7 @@
                 <p>Analyzer takes the url of any blog and evaluates it using the powerful <span>Meaning Cloud's sentiment analysis API</span>. It presents the outcome of its analysis below.</p>
                 <form onsubmit="return Client.handleSubmit(event)">
                     <input id="text-input" type="text" name="input" placeholder="Input text or url">
-                    <div class="error-msg"></div>
+                    <div class="error-msg hide"></div>
                     <input type="submit" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             </section>
@@ -36,6 +36,12 @@
         <footer>
             <p>Analyzer &copy; 2023. <br>Powered by <a href="https://www.meaningcloud.com/">Meaning Cloud's sentiment analysis API</a></p>
         </footer>
-
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
     </body>
 </html>

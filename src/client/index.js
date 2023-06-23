@@ -1,5 +1,10 @@
 import { blankInputChecker, urlChecker } from './js/inputChecker';
-import { handleSubmit, postHandler } from './js/formHandler';
+import {
+    handleSubmit,
+    postHandler,
+    interpretPolarity,
+    updateUI
+} from './js/formHandler';
 
 import './styles/resets.scss';
 import './styles/base.scss';
@@ -13,9 +18,11 @@ const logoElement = document.querySelector('.logo');
 logoElement.setAttribute('src', logo);
 
 
-export { 
+export {
     blankInputChecker,
     urlChecker,
     handleSubmit,
-    postHandler
+    postHandler,
+    interpretPolarity,
+    updateUI
 }
