@@ -24,7 +24,7 @@ function handleSubmit(event) {
         errorElem.textContent = 'Error: invalid input, enter a text or url';
         errorElem.style.display = 'block';
     }
-};
+}
 
 
 const postHandler = async(url = '', data = {}) => {
@@ -36,10 +36,10 @@ const postHandler = async(url = '', data = {}) => {
         },
         body: JSON.stringify(data),
      });
- 
+
     try {
         const result = await response.json();
-        return result; 
+        return result;
     } catch(error) {
         console.log(error);
     }
@@ -66,12 +66,12 @@ function interpretPolarity(scoreTag) {
             polarity = 'N/A';
     }
     return polarity;
-};
+}
 
 function updateUI(data, formText, elem) {
     if(data.status.code === '0') {
         console.log(data);
-        const { 
+        const {
             agreement,
             confidence,
             irony,

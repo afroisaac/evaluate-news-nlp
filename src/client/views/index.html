@@ -12,7 +12,7 @@
                 <a href="/"><img class="logo" alt="Analyzer logo"></a>
             </div>
             <div class="menu-wrapper">
-             
+
             </div>
         </header>
 
@@ -36,6 +36,12 @@
         <footer>
             <p>Analyzer &copy; 2023. <br>Powered by <a href="https://www.meaningcloud.com/">Meaning Cloud's sentiment analysis API</a></p>
         </footer>
-
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
     </body>
 </html>

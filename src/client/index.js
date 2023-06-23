@@ -18,7 +18,7 @@ const logoElement = document.querySelector('.logo');
 logoElement.setAttribute('src', logo);
 
 
-export { 
+export {
     blankInputChecker,
     urlChecker,
     handleSubmit,

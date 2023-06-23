@@ -18,18 +18,18 @@ app.use(express.static('dist'));
 //console.log(__dirname)
 
 async function makeRequest(arg) {
-    const {text, type} = arg;
+    const { text, type } = arg;
     const endPointUrl = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&${type}=${text}&lang=auto`;
-    
+
     const response = await fetch(endPointUrl);
-    
+
     try {
         const data = await response.json();
         return data;
     } catch(error) {
         console.log(error);
     }
-}
+};
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html');

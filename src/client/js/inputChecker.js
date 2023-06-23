@@ -10,7 +10,7 @@ function urlChecker(inputText) {
     return pattern.test(inputText);
 }
 
-export { 
-    blankInputChecker, 
-    urlChecker 
+export {
+    blankInputChecker,
+    urlChecker
 }

@@ -28,4 +28,4 @@ describe('Testing interpretPolarity', () => {
     test('It should return NEGATIVE when scoreTag is N', () => {
         expect(interpretPolarity('N')).toBe('NEGATIVE');
     });
-});
+})

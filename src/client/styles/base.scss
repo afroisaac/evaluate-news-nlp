@@ -64,7 +64,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 2rem;
- 
+
     .result-row{
         display: flex;
         justify-content: space-between;
@@ -74,7 +74,7 @@ main {
             font-weight: 700;
             font-size: 1rem;
         }
-        
+
         .value {
             font-size: 0.8rem;
             padding-left: 2rem;
